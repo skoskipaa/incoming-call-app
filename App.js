@@ -56,18 +56,15 @@ export default class App extends React.Component {
         } else if (event === 'Offhook') {
           this.setState({incoming: true, number});
         } else if (event === 'Missed') {
-          // Do something call got missed
-          // This clause will only be executed for Android
           this.setState({incoming: false, number: null});
         }
       },
-      true, // if you want to read the phone number of the incoming call [ANDROID], otherwise false
+      true, // read the phone number of the incoming call [ANDROID]
       () => {}, // callback if your permission got denied [ANDROID] [only if you want to read incoming number] default: console.error
       {
         title: 'Phone State Permission',
         message:
           'This app needs access to your phone state in order to react and/or to adapt to incoming calls.',
-      }, // a custom permission request message to explain to your user, why you need the permission [recommended] - this is the default one
     );
   };
   stopListenerTapped = () => {
