@@ -18,9 +18,6 @@ export default class App extends React.Component {
       featureOn: false,
       incoming: false,
       number: null,
-      numberInfo: null,
-      loading: false,
-      error: null,
     };
   }
 
@@ -105,6 +102,7 @@ export default class App extends React.Component {
             style={{
               fontSize: 30,
               color: 'white',
+              textAlign: 'center',
             }}>
             Puhelu numerosta {this.state.number}
           </Text>
